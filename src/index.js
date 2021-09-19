@@ -30,6 +30,9 @@ var env = dotenv(fs.readFileSync("./.env", {"encoding": "utf-8"}));
                 case "new blacklist":
                     fetch("https://discord.com/api/v9/channels/887810878928478239/messages",{headers:{Authorization:"Bot "+process.env.TOKEN,"Content-Type":"application/json"},method:"POST",body:JSON.stringify({content:"Quelqu'un a été blacklist !",embeds:[{color:13565962,fields:[{name:"Membre",value:`${null==blinfo.blacklisteduser.username?blinfo._id:`\`${blinfo.blacklisteduser.username}#${blinfo.blacklisteduser.discriminator}\` \n (**${blinfo._id}**)`}`},{name:"Reason",value:blinfo.reason}],footer:{text:`Blacklisted by ${blinfo.blacklistedby}`},author:{name:"NLAR | BLACKLIST MANAGER"},thumbnail:{url:`${null==blinfo.blacklisteduser.avatar?"":`https://cdn.discordapp.com/avatars/${blinfo._id}/${blinfo.blacklisteduser.avatar}?size=128`}`}}]})});
                     break;
+                case "updated blacklist":
+                    fetch("https://discord.com/api/v9/channels/887810878928478239/messages",{headers:{Authorization:"Bot "+process.env.TOKEN,"Content-Type":"application/json"},method:"POST",body:JSON.stringify({content:"Une blacklist a été mise a jour !",embeds:[{color:5374207,fields:[{name:"Membre",value:`${null==blinfo.blacklisteduser.username?blinfo._id:`\`${blinfo.blacklisteduser.username}#${blinfo.blacklisteduser.discriminator}\` \n (**${blinfo._id}**)`}`},{name:"Reason",value:blinfo.reason},{name:"Old Reason",value:blinfo.reasonold}],footer:{text:`Updated by ${blinfo.blacklistedby}`},author:{name:"NLAR | BLACKLIST MANAGER"},thumbnail:{url:`${null==blinfo.blacklisteduser.avatar?"":`https://cdn.discordapp.com/avatars/${blinfo._id}/${blinfo.blacklisteduser.avatar}?size=128`}`}}]})});
+                    break;
             }
         }
       
