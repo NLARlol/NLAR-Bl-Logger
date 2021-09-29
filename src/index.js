@@ -22,7 +22,9 @@ var env = dotenv(fs.readFileSync("./.env", {"encoding": "utf-8"}));
         });
 
         socket2.onmessage = function(msg) {
+     
             var blinfo = JSON.parse(msg.data);
+            console.log(blinfo)
             switch(blinfo.message) {
                 case "removed blacklist":
                     fetch("https://discord.com/api/v9/channels/887810878928478239/messages",{headers:{Authorization:"Bot "+process.env.TOKEN,"Content-Type":"application/json"},method:"POST",body:JSON.stringify({content:"Quelqu'un a été unblacklist !",embeds:[{color:5420936,fields:[{name:"Membre",value:`${null==blinfo.blacklisteduser.username?blinfo._id:`\`${blinfo.blacklisteduser.username}#${blinfo.blacklisteduser.discriminator}\` \n (**${blinfo._id}**)`}`},{name:"Reason",value:blinfo.reason}],footer:{text:`Unblacklisted by ${blinfo.blacklistedby}`},author:{name:"NLAR | BLACKLIST MANAGER"},thumbnail:{url:`${null==blinfo.blacklisteduser.avatar?"":`https://cdn.discordapp.com/avatars/${blinfo._id}/${blinfo.blacklisteduser.avatar}?size=128`}`}}]})});
