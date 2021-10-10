@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
         var socket2 = new WebSocket("wss://sltcv.herokuapp.com");
 
         socket2.on("close", () => {
+            console.log("connection closed")
             setTimeout(initSltcv, 5000);
         });
         socket2.on("open", () => {
