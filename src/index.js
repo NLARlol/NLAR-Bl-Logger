@@ -14,7 +14,7 @@ const dotenv = require("dotenv");
             console.log("Websocket started")
         });
 
-        socket2.onmessage = function(msg) {
+        socket2.onmessage = async(msg) => {
      
             var blinfo = JSON.parse(msg.data);
             console.log(blinfo)
