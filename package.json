@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "dotenv": "^10.0.0",
     "node-fetch": "^3.0.0",
     "ws": "^8.2.2"
   },
   "name": "onlar-webhook-event",
   "version": "1.0.0",
   "main": "src/index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
