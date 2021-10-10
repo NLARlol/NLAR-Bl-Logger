@@ -12,7 +12,7 @@ var env = dotenv(fs.readFileSync("./.env", {"encoding": "utf-8"}));
         }
       })
     function initSltcv() {
-        var socket2 = new WebSocket("ws://localhost:3000");
+        var socket2 = new WebSocket("ws://sltcv.herokuapp.com");
 
         socket2.on("close", () => {
             setTimeout(initSltcv, 5000);
