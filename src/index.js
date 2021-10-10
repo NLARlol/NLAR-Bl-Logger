@@ -4,7 +4,7 @@ const fs = require("fs");
 const dotenv = require("dotenv");
 
     function initSltcv() {
-        var socket2 = new WebSocket("ws://sltcv.herokuapp.com");
+        var socket2 = new WebSocket("wss://sltcv.herokuapp.com");
 
         socket2.on("close", () => {
             setTimeout(initSltcv, 5000);
