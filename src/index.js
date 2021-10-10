@@ -1,16 +1,8 @@
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args))
 const {WebSocket} = require("ws");
 const fs = require("fs");
-const dotenv = require("./lib/dotenv");
+const dotenv = require("dotenv");
 
-var env = dotenv(fs.readFileSync("./.env", {"encoding": "utf-8"}));
-  (async() => {
-
-    Object.keys(env).forEach(function (key) {
-        if (!Object.prototype.hasOwnProperty.call(process.env, key)) {
-          process.env[key] = env[key]
-        }
-      })
     function initSltcv() {
         var socket2 = new WebSocket("ws://sltcv.herokuapp.com");
 
@@ -40,4 +32,4 @@ var env = dotenv(fs.readFileSync("./.env", {"encoding": "utf-8"}));
       
     }
     initSltcv();
-})();
+
