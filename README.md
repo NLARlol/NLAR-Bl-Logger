@@ -1,7 +1,7 @@
 
 # NLAR-Blacklist Logger.
 
-Ce repository n'est pas sensé être modifié. A moins que quelqu'un ajoute de nouveaux event au websocket, normalement personne n'est sensé y toucher. Il est très bien optimisé et conçu de la façon donc il est acctuellement.
+Ce repository n'est pas sensé être modifié. A moins que quelqu'un ajoute de nouveaux event au websocket, normalement personne n'est sensé y toucher. Il est très bien optimisé et conçu de la façon donc il est acctuellement. (non)
 
 
 
